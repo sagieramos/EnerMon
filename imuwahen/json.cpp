@@ -5,6 +5,7 @@
  * to_json - program that convert array to JSON.
  * @arr: array entry.
  * @length_of_array: number of element in the array.
+ * @propertyName: object given name.
  * Return: JSON string.
  */
 
