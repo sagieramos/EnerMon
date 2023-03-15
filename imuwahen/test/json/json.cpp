@@ -7,9 +7,9 @@ long arr2[] = {30, 32, 20};
 int main()
 {
 	unsigned int n = getArrayLength(arr);
-	cout << to_json(arr, n) << endl;
+	cout << to_json(arr, n, "Names") << endl;
 
 	n = getArrayLength(arr2);
-	cout << to_json(arr2, n) << endl;
+	cout << to_json(arr2, n, "IDs") << endl;
 	return 0;
 }

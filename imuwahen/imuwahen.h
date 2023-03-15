@@ -22,9 +22,9 @@ class log
 		~log();
 };
 
-std::string to_json(std::string arr[], const int &length_of_array);
-std::string to_json(int arr[], const int &length_of_array);
-std::string to_json(long int arr[], const int &length_of_array);
-std::string to_json(long long int arr[], const int &length_of_array);
+std::string to_json(std::string arr[], const int &length_of_array, std::string propertyName);
+std::string to_json(int arr[], const int &length_of_array, std::string propertyName);
+std::string to_json(long int arr[], const int &length_of_array, std::string propertyName);
+std::string to_json(long long int arr[], const int &length_of_array, std::string propertyName);
 
 #endif //IMUWAHEN_H

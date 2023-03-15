@@ -8,10 +8,10 @@
  * Return: JSON string.
  */
 
-std::string to_json(int arr[], const int &length_of_array)
+std::string to_json(int arr[], const int &length_of_array, std::string propertyName)
 {
 	std::stringstream ss;
-	ss << "[";
+	ss << "\"" << propertyName << "\":[";
 
 	for (int i = 0; i < length_of_array; i++)
 	{
@@ -25,10 +25,10 @@ std::string to_json(int arr[], const int &length_of_array)
 	return (ss.str());
 }
 
-std::string to_json(long int arr[], const int &length_of_array)
+std::string to_json(long int arr[], const int &length_of_array, std::string propertyName)
 {
 	std::stringstream ss;
-	ss << "[";
+	ss << "\"" << propertyName << "\":[";
 
 	for (int i = 0; i < length_of_array; i++)
 	{
@@ -42,10 +42,10 @@ std::string to_json(long int arr[], const int &length_of_array)
 	return (ss.str());
 }
 
-std::string to_json(long long int arr[], const int &length_of_array)
+std::string to_json(long long int arr[], const int &length_of_array, std::string propertyName)
 {
 	std::stringstream ss;
-	ss << "[";
+	ss << "\"" << propertyName << "\":[";
 
 	for (int i = 0; i < length_of_array; i++)
 	{
@@ -59,10 +59,10 @@ std::string to_json(long long int arr[], const int &length_of_array)
 	return (ss.str());
 }
 
-std::string to_json(std::string arr[], const int &length_of_array)
+std::string to_json(std::string arr[], const int &length_of_array, std::string propertyName)
 {	
 	std::stringstream ss;
-	ss << "[";
+	ss << "\"" << propertyName << "\":[";
 
 	for (int i = 0; i < length_of_array; i++)
 	{
