@@ -9,22 +9,22 @@ int getArrayLength (T(&)[N])
 	return N;
 }
 
-class log
+class ilog
 {
-	private:
-		unsigned int len;
 	public:
-		static void insert(size_t arr[], size_t value, const int &length_of_array);
-		static void insert(int arr[], int value, const int &length_of_array);
-		static void insert(long int arr[], long int value, const int &length_of_array);
-		static void insert(long long int arr[], long long int value, const int &length_of_array);
-		static void insert(std::string arr[], std::string value, const int &length_of_array);
-		~log();
-};
+		ilog(float *arr, int length_of_array);
+		ilog(bool *arr, int length_of_array);
+		ilog(std::string *arr, int length_of_array);
+		void insert(float value);
+		void insert(std::string value);
+		std::string to_json(std::string property_name);
+		~ilog();
 
-std::string to_json(std::string arr[], const int &length_of_array, std::string propertyName);
-std::string to_json(int arr[], const int &length_of_array, std::string propertyName);
-std::string to_json(long int arr[], const int &length_of_array, std::string propertyName);
-std::string to_json(long long int arr[], const int &length_of_array, std::string propertyName);
+	private:
+		float *_arr;
+		std::string *s_arr;
+		int _length_of_array;
+		bool flag = false;
+};
 
 #endif //IMUWAHEN_H
