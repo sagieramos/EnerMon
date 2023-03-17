@@ -13,7 +13,6 @@ class ilog
 {
 	public:
 		ilog(float *arr, int length_of_array);
-		ilog(bool *arr, int length_of_array);
 		ilog(std::string *arr, int length_of_array);
 		void insert(float value);
 		void insert(std::string value);
