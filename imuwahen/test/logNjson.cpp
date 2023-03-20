@@ -18,7 +18,7 @@ int main()
 	for (int i = 0; i < n1; i++)
 		std::cout << aa[i] << " ";
 	std::cout << "\nConverting to JSON string\n";
-	std::cout << controller.to_json("V") << std::endl;
+	std::cout << controller.to_json() << std::endl;
 	std::cout << "\n\n";
 
 	//String controller

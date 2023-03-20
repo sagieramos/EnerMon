@@ -17,13 +17,20 @@ class ilog
 		void insert(float value);
 		void insert(std::string value);
 		std::string to_json(std::string property_name);
+		std::string to_json(void);
+		void to_array(char *json);
 		~ilog();
 
 	private:
-		float *_arr;
-		std::string *s_arr;
-		int _length_of_array;
-		bool flag = false;
+		float *_arr; //pointer to array source of float data type
+		std::string *s_arr; //pointer to array source of string data type
+		const int _length_of_array; //length of array source
+		
+		float *json_to_farr; //pointer to float array from JSON
+		std::string *json_to_fstr; //pointer to string array from JSON
+		bool flag = false; 
 };
+
+bool isStringArray(const std::string &json_str);
 
 #endif //IMUWAHEN_H

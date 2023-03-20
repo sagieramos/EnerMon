@@ -44,7 +44,40 @@ void ilog::insert(std::string value)
 std::string ilog::to_json(std::string property_name)
 {
 	std::stringstream ss;
-	ss << "\"" << property_name << "\":[";
+
+	if (!(property_name.empty()))
+		ss << "\"" << property_name << "\":";
+	
+	ss << "[";
+
+	if(flag)
+	{
+		for (int i = 0; i < _length_of_array; i++)
+		{
+			ss << R"(")" << s_arr[i] << R"(")";
+			if (i != _length_of_array - 1)
+				ss << ",";
+		}
+	}
+	else
+	{
+		for (int i = 0; i < _length_of_array; i++)
+		{
+			ss << _arr[i];
+
+			if (i != _length_of_array - 1)
+				ss << ",";
+		}
+	}
+	ss << "]";
+	return (ss.str());
+}
+
+std::string ilog::to_json(void)
+{
+	std::stringstream ss;
+
+	ss << "[";
 
 	if(flag)
 	{
