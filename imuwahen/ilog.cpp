@@ -1,16 +1,26 @@
 #include "imuwahen.h"
 #include <sstream>
 
-ilog::ilog(float *arr, int length_of_array)
-	: _arr(arr), _length_of_array(length_of_array)
-{flag = false;}
-
-ilog::ilog(std::string *arr, int length_of_array)
-	: s_arr(arr), _length_of_array(length_of_array)
-{flag = true;}
-
-void ilog::insert(float value)
+ilog::ilog(int length_of_array, flg flag)
+	: _length_of_array(length_of_array), _flag(flag)
 {
+	if (_flag == NUMBER)
+		_arr = new float[_length_of_array + 1];
+	if (_flag == WORD)
+		s_arr = new std::string[_length_of_array + 1];
+}
+
+ilog::ilog(int length_of_array)
+	: _length_of_array(length_of_array)
+{
+	_flag = NUMBER;
+	_arr = new float[_length_of_array];
+}
+
+void ilog::input(float value)
+{
+	if (_flag != NUMBER)
+		return;
 	int k = 0;
 	float shift[_length_of_array];
 
@@ -24,8 +34,10 @@ void ilog::insert(float value)
 		_arr[i] = shift[i];
 }
 
-void ilog::insert(std::string value)
+void ilog::input(std::string value)
 {
+	if (_flag != WORD)
+		return;
 	int k = 0;
 	std::string shift[_length_of_array];
 
@@ -41,65 +53,9 @@ void ilog::insert(std::string value)
 		s_arr[i] = shift[i];
 }
 
-std::string ilog::to_json(std::string property_name)
+ilog::~ilog() 
 {
-	std::stringstream ss;
+	if (_flag == NUMBER)
+		delete _arr;
 
-	if (!(property_name.empty()))
-		ss << "\"" << property_name << "\":";
-	
-	ss << "[";
-
-	if(flag)
-	{
-		for (int i = 0; i < _length_of_array; i++)
-		{
-			ss << R"(")" << s_arr[i] << R"(")";
-			if (i != _length_of_array - 1)
-				ss << ",";
-		}
-	}
-	else
-	{
-		for (int i = 0; i < _length_of_array; i++)
-		{
-			ss << _arr[i];
-
-			if (i != _length_of_array - 1)
-				ss << ",";
-		}
-	}
-	ss << "]";
-	return (ss.str());
 }
-
-std::string ilog::to_json(void)
-{
-	std::stringstream ss;
-
-	ss << "[";
-
-	if(flag)
-	{
-		for (int i = 0; i < _length_of_array; i++)
-		{
-			ss << R"(")" << s_arr[i] << R"(")";
-			if (i != _length_of_array - 1)
-				ss << ",";
-		}
-	}
-	else
-	{
-		for (int i = 0; i < _length_of_array; i++)
-		{
-			ss << _arr[i];
-
-			if (i != _length_of_array - 1)
-				ss << ",";
-		}
-	}
-	ss << "]";
-	return (ss.str());
-}
-
-ilog::~ilog() {};

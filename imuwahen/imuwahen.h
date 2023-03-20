@@ -3,6 +3,8 @@
 #ifndef IMUWAHEN_H
 #define IMUWAHEN_H
 
+enum flg {NUMBER, WORD};
+
 template <typename T, int N>
 int getArrayLength (T(&)[N])
 {
@@ -12,25 +14,29 @@ int getArrayLength (T(&)[N])
 class ilog
 {
 	public:
-		ilog(float *arr, int length_of_array);
-		ilog(std::string *arr, int length_of_array);
-		void insert(float value);
-		void insert(std::string value);
+		ilog(int length_of_array, flg flag);
+		ilog(int length_of_array);
+
+		void input(float value);
+		void input(std::string value);
+
+		void input(float value, int index);
+		void input(std::string value, int index);
+
+		float outputN(int index);
+		std::string outputW(int index);
+	
 		std::string to_json(std::string property_name);
 		std::string to_json(void);
-		void to_array(char *json);
 		~ilog();
 
 	private:
-		float *_arr; //pointer to array source of float data type
-		std::string *s_arr; //pointer to array source of string data type
 		const int _length_of_array; //length of array source
-		
-		float *json_to_farr; //pointer to float array from JSON
-		std::string *json_to_fstr; //pointer to string array from JSON
-		bool flag = false; 
+		flg _flag;
+		float *_arr = NULL; //pointer to array source of float data type
+		std::string *s_arr = NULL; //pointer to array source of string data type
 };
 
 bool isStringArray(const std::string &json_str);
-
+void to_array(std::string json, float *array, int _length_of_array);
 #endif //IMUWAHEN_H
