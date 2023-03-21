@@ -1,0 +1,39 @@
+#include "imuwahen.h"
+#include <string>
+#include "../rapidjson/include/rapidjson/document.h"
+#include "../rapidjson/include/rapidjson/writer.h"
+#include "../rapidjson/include/rapidjson/stringbuffer.h"
+#include <iostream>
+
+int main() 
+{ 
+	// Sample JSON string
+	std::string jsonString = R"({"array":[1, 2, 3]})";
+
+  	// Parse JSON string
+  	rapidjson::Document doc;
+  	doc.Parse(jsonString.c_str());
+
+  	if (!doc.IsObject()) 
+	{
+    		std::cout << "Failed to parse JSON string" << std::endl;
+    		return 1;
+  	}
+
+  	// Access JSON array
+  	const rapidjson::Value& jsonArray = doc["array"];
+
+  	// Iterate over JSON array
+  	if (jsonArray.IsArray()) 
+	{
+    		for (rapidjson::SizeType i = 0; i < jsonArray.Size(); i++) 
+		{
+      			const rapidjson::Value& element = jsonArray[i];
+      			if (element.IsInt())
+        			std::cout << element.GetInt() << " ";
+    		}
+    		std::cout << std::endl;
+  	}
+
+  	return 0;
+}

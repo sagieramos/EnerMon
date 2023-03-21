@@ -5,7 +5,8 @@ void ilog::input(float value, int index)
 {
 	if(_flag != NUMBER || (index < 1 || index > _length_of_array))
 		return;
-	_arr[index - 1] = value;
+	else
+		_arr[index - 1] = value;
 }
 
 void ilog::input(std::string value, int index)

@@ -1,46 +1,48 @@
-#include "imuwahen.h"
+#include "../imuwahen.h"
 #include <string>
-#include <cstring>
-#include <sstream>
+#include "rapidjson/document.h"
+#include <iostream>
 
-void to_array(std::string json, float *array, int _length_of_array)
-{
-	const int length = json.length();
-	char *char_json = new char[length + 1];
-	strcpy(char_json, json.c_str());
-	int pos = 0;
-	int _pos = 0;
-	bool decimal = true;
-	std::stringstream ss;
+int main() 
+{ 
+	// Sample JSON string
+	std::string json = R"(["apple", "banana", "orange", "grape"])";
+	std::string jsonString = "[1.1, 2.3, 2.3, 33.2]";
 
-	for (int i = 0; i < length/2; i++)
-	{
-		if (char_json[i] == '[')
-		{
-			pos = i;
-			break;
-		}
-	}
-	for (int i = pos; i < length; i++)
-	{
-		if ((char_json[i] <= 0x2E && char_json[i] >= 0x30) && char_json[i] != 0x2F)
-		{
-			if (char_json[i] == '.')
-				decimal = false;
-			if (char_json[i] != '.' || decimal)
-			ss << char_json[i];
-		}
-		else if (char_json[i] == ',')
-		{
-			array[_pos] = std::stof(ss.str());
-			++_pos;
-			ss.clear();
-			decimal = true;
-		}
-		else if (char_json[i] == ']')
-			break;
-			
-	}
+	// Parse JSON array string into a rapidjson document
+	rapidjson::Document docc;
+	docc.Parse(json.c_str());
 
-	delete[] char_json;
+	// Convert JSON array to C++ array
+	std::string arr[docc.Size()];
+
+	for (unsigned int i = 0; i < docc.Size(); i++)
+		arr[i] = docc[i].GetString();
+
+	for (unsigned int i = 0; i < docc.Size(); i++)
+		std::cout << arr[i] << "\n";
+//-----------------------------------------------------------------
+
+    	rapidjson::Document doc;
+    	doc.Parse(jsonString.c_str());
+
+	if (doc.HasParseError()) {
+        std::cout << "Error parsing JSON: " << std::endl;
+        return 1;
+    }
+
+    	const rapidjson::Value& jsonArray = doc.GetArray();
+
+    	float floatArray[jsonArray.Size()]; //Array declaration
+
+    	for (rapidjson::SizeType i = 0; i < jsonArray.Size(); i++)
+		floatArray[i] = jsonArray[i].GetFloat();
+
+    	for (float f : floatArray) 
+        	std::cout << f << " ";
+    
+    	std::cout << std::endl;
+
+
+	return 0;
 }

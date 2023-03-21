@@ -1,34 +1,41 @@
-#include "imuwahen.h"
+#include "../imuwahen.h"
 #include <iostream>
 
 using namespace std;
 float* arr;
 int main()
 {
-	ilog test = ilog(5, NUMBER);
-	test.input(2);
-	test.input(3);
-	test.input(1);
+	int n = 4;
+	ilog fash1 = ilog(n, NUMBER);
 
-	test.input(20, 5);
-	
-	for (int i = 1; i <= 5; i++)
-		cout << " " << test.outputN(i);
+	fash1.input(2.543);
+	fash1.input(3);
+	fash1.input(40);
+	fash1.input(30);
+	fash1.input(80);
+	fash1.input(90);
+
+	for (int i = 1; i <= n; i++)
+		cout << " | " << fash1.outputN(i);
 	cout << endl;
 
-	ilog str = ilog(5, WORD);
-	str.input("STan");
-	str.input("Osas");
-	str.input("Osas", 5);
+	ilog str = ilog(9, WORD);
 
-	for (int i = 1; i <= 5; i++)
+	str.input("Stanley");
+	str.input("Kingfash");
+	str.input("55");
+	str.input("Chinedu");
+	str.input("Chinedu-ALX");
+	str.input("School", 9);
+
+	for (int i = 1; i <= 9; i++)
 		cout << " " << str.outputW(i);
 	cout << endl;
 	
-	cout << test.to_json() << "\n";
-	cout << str.to_json() << "\n";
+	cout << fash1.to_json("generator") << "\n";
+	cout << str.to_json("users") << "\n";
 
-	to_array(test.to_json, arr, 5);
+	//to_array(fash1.to_json, arr, 5);
 	return 0;
 	
 }

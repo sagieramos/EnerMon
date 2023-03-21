@@ -57,5 +57,8 @@ ilog::~ilog()
 {
 	if (_flag == NUMBER)
 		delete _arr;
+	else if(_flag == WORD)
+		delete[] s_arr;
+	else {}
 
 }
