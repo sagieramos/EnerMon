@@ -10,9 +10,9 @@ std::string ilog::to_json(std::string property_name)
 	
 	ss << "[";
 
-	if(_flag == WORD)
+	if(_flag == WRD)
 	{
-		for (int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < _length_of_array; i++)
 		{
 			ss << R"(")" << s_arr[i] << R"(")";
 			if (i != _length_of_array - 1)
@@ -21,7 +21,7 @@ std::string ilog::to_json(std::string property_name)
 	}
 	else
 	{
-		for (int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < _length_of_array; i++)
 		{
 			ss << _arr[i];
 
@@ -39,9 +39,9 @@ std::string ilog::to_json(void)
 
 	ss << "[";
 
-	if(_flag == WORD)
+	if(_flag == WRD)
 	{
-		for (int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < _length_of_array; i++)
 		{
 			ss << R"(")" << s_arr[i] << R"(")";
 			if (i != _length_of_array - 1)
@@ -50,7 +50,7 @@ std::string ilog::to_json(void)
 	}
 	else
 	{
-		for (int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < _length_of_array; i++)
 		{
 			ss << _arr[i];
 

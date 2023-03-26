@@ -3,7 +3,8 @@
 #ifndef IMUWAHEN_H
 #define IMUWAHEN_H
 
-enum flg {NUMBER, WORD};
+enum flg {NUM, WRD};
+enum pos {TOP, BTM};
 
 template <typename T, int N>
 int getArrayLength (T(&)[N])
@@ -14,24 +15,27 @@ int getArrayLength (T(&)[N])
 class ilog
 {
 	public:
-		ilog(int length_of_array, flg flag);
-		ilog(int length_of_array);
+		ilog(unsigned int length_of_array, flg flag);
+		ilog(unsigned int length_of_array);
 
 		void input(float value);
 		void input(std::string value);
 
-		void input(float value, int index);
-		void input(std::string value, int index);
+		void input(float value, unsigned int index);
+		void input(std::string value, unsigned int index);
 
-		float outputN(int index);
-		std::string outputW(int index);
+		float num_out(unsigned int index);
+		std::string wrd_out(unsigned int index);
+
+		void resize(unsigned int size, pos point); 
+		void resize(unsigned int size); 
 	
 		std::string to_json(std::string property_name);
 		std::string to_json(void);
 		~ilog();
 
 	private:
-		const int _length_of_array; //length of array source
+		unsigned int _length_of_array; //length of array source
 		flg _flag;
 		float *_arr = NULL; //pointer to array source of float data type
 		std::string *s_arr = NULL; //pointer to array source of string data type
