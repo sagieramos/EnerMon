@@ -13,7 +13,7 @@ int main()
 	fash.input(9);
 	fash.input(10);
 
-	fash.resize(uu, BTM);
+	fash.resize(uu, TOP);
 
 
 	for (int i = 1; i < uu+1; i++)

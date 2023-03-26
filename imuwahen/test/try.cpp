@@ -13,7 +13,7 @@ int main()
 	fash.input("Osas4");
 	fash.input("Osas5");
 
-	fash.resize(uu);
+	fash.resize(uu, BTM);
 
 
 	for (int i = 1; i < uu+1; i++)
