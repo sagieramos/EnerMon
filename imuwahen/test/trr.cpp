@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-int uu = 3;
+int uu = 10;
 int main()
 {
 	int size = 5;

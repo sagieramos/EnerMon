@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-int uu = 3;
+int uu = 2;
 int main()
 {
 	int size = 5;
@@ -13,7 +13,7 @@ int main()
 	fash.input("Osas4");
 	fash.input("Osas5");
 
-	fash.resize(uu, BTM);
+	fash.resize(uu, TOP);
 
 
 	for (int i = 1; i < uu+1; i++)

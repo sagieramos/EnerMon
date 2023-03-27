@@ -38,7 +38,7 @@ class ilog
 		unsigned int _length_of_array; //length of array source
 		flg _flag;
 		float *_arr = NULL; //pointer to array source of float data type
-		std::string *s_arr = NULL; //pointer to array source of string data type
+		std::string *s_arr = NULL; //pointer to array source of string data 
 };
 
 bool isStringArray(const std::string &json_str);
