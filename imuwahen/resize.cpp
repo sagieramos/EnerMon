@@ -5,7 +5,7 @@
  * @new_length: the new size.
  * @point: enumirated macro: {TOP, BTM}. 
  * TOP flag ilog::resize to trim out from the last index if the current object
- * size is greater than the new size. BTM trim from out the first index...
+ * size is greater than the new size. BTM trim out from the first index...
  *
  * Return: void.
  */

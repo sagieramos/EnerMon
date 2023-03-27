@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-int uu = 2;
+int uu = 8;
 int main()
 {
 	int size = 5;
@@ -16,7 +16,7 @@ int main()
 	fash.resize(uu, TOP);
 
 
-	for (int i = 1; i < uu+1; i++)
+	for (int i = 0; i < uu; i++)
 	cout << i << " " << fash.wrd_out(i) << endl;
 	
 	return 0;

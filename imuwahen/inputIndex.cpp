@@ -1,9 +1,9 @@
 #include "imuwahen.h"
 
 /**
- * ilog::input - shift all the values in the private array of ilog::_arr 
- * to the higher index. insert a floating point number into the index[0].
- * @value: The value; accept either float or string
+ * ilog::input - shift all the values in the current object to the  
+ * higher index, then insert a value into the first index.
+ * @value: The value; floating point number.
  *
  * Return: void.
  */
@@ -26,9 +26,9 @@ void ilog::input(float value)
 }
 
 /**
- * ilog::input - shift all the values in the private array of ilog::s_arr 
- * to the higher index. insert a string value into the index[0].
- * @value: The value; accept either float or string
+ * ilog::input - shift all the values in the current object to the  
+ * higher index, then insert a value into the first index.
+ * @value: The value; string.
  *
  * Return: void.
  */
@@ -53,8 +53,8 @@ void ilog::input(std::string value)
 }
 
 /**
- * ilog::input - insert a floating point number into ilog::_arr private array.
- * @value: The value.
+ * ilog::input - insert a value number into the current object.
+ * @value: The value; floating point number.
  * @index: The index to place the value
  *
  * Return: void.
@@ -69,8 +69,8 @@ void ilog::input(float value, unsigned int index)
 }
 
 /**
- * ilog::input - insert a string into ilog::s_arr private array.
- * @value: The value.
+ * ilog::input - insert a value number into the current object.
+ * @value: The value. string.
  * @index: The index to place the value
  *
  * Return: void.

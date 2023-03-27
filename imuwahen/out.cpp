@@ -1,3 +1,5 @@
+#include "imuwahen.h"
+
 /**
 * ilog::num_out - print ilog::_arr value. 
 * @index: ilog::_arr index to print.

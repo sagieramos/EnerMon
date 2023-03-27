@@ -2,8 +2,8 @@
 #include <sstream>
 
 /**
- * ilog::to_json - convert ilog::_arr or ilog::s_arr to JSON.
- * @property_name: object name.
+ * ilog::to_json - convert current object to JSON.
+ * @property_name: JSON object name.
  *
  * Return: JSON string.
  */
@@ -41,7 +41,7 @@ std::string ilog::to_json(std::string property_name)
 }
 
 /**
- * ilog::to_json - convert ilog::_arr or ilog::s_arr to JSON.
+ * ilog::to_json - convert current object to JSON.
  *
  * Return: JSON string.
  */
