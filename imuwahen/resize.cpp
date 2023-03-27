@@ -1,12 +1,11 @@
 #include "imuwahen.h"
 
 /**
- * ilog::resize - resize the size of ilog::_arr or ilog::s_arr.
+ * ilog::resize - resize current class object.
  * @new_length: the new size.
- * @point: enumirated micro: {TOP, BTM}. 
- * TOP hold the values from the index[0] to index[new_length-1]
- * if the previous size is greater than the new size;
- * BTM hold the value from the highest index
+ * @point: enumirated macro: {TOP, BTM}. 
+ * TOP flag ilog::resize to trim out from the last index if the current object
+ * size is greater than the new size. BTM trim from out the first index...
  *
  * Return: void.
  */
@@ -30,7 +29,6 @@ void ilog::resize(unsigned int new_length, pos point)
 			num[k] = _arr[i];
 			k++;
 		}
-		
 		delete _arr;
 		_length_of_array = new_length;
 		_arr = new float[_length_of_array];	
@@ -46,7 +44,6 @@ void ilog::resize(unsigned int new_length, pos point)
 			wrd[k] = s_arr[i];
 			++k;
 		}
-
 		delete[] s_arr;
 		_length_of_array = new_length;
 		s_arr = new std::string[_length_of_array];
