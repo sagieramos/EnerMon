@@ -1,5 +1,16 @@
 #include "imuwahen.h"
 
+/**
+ * ilog::resize - resize the size of ilog::_arr or ilog::s_arr.
+ * @new_length: the new size.
+ * @point: enumirated micro: {TOP, BTM}. 
+ * TOP hold the values from the index[0] to index[new_length-1]
+ * if the previous size is greater than the new size;
+ * BTM hold the value from the highest index
+ *
+ * Return: void.
+ */
+
 void ilog::resize(unsigned int new_length, pos point)
 {
 	if (new_length < 1)
@@ -44,6 +55,13 @@ void ilog::resize(unsigned int new_length, pos point)
 	}
 	else{}
 }
+
+/**
+ * ilog::resize - resize the size of ilog::_arr or ilog::s_arr.
+ * @new_length: the new size.
+ *
+ * Return: void.
+ */
 
 void ilog::resize(unsigned int new_length)
 {

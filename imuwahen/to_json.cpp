@@ -1,6 +1,13 @@
 #include "imuwahen.h"
 #include <sstream>
 
+/**
+ * ilog::to_json - convert ilog::_arr or ilog::s_arr to JSON.
+ * @property_name: object name.
+ *
+ * Return: JSON string.
+ */
+
 std::string ilog::to_json(std::string property_name)
 {
 	std::stringstream ss;
@@ -32,6 +39,12 @@ std::string ilog::to_json(std::string property_name)
 	ss << "]";
 	return (ss.str());
 }
+
+/**
+ * ilog::to_json - convert ilog::_arr or ilog::s_arr to JSON.
+ *
+ * Return: JSON string.
+ */
 
 std::string ilog::to_json(void)
 {

@@ -7,13 +7,13 @@ int main()
 {
 	int size = 5;
 	ilog fash = ilog(size);
-	fash.input(2);
-	fash.input(1);
-	fash.input(5);
-	fash.input(9);
+	fash.input(2.5);
+	fash.input(1.42);
+	fash.input(5.52);
+	fash.input(9.01);
 	fash.input(10);
 
-	fash.resize(uu, TOP);
+	fash.resize(uu, BTM);
 
 
 	for (int i = 1; i < uu+1; i++)
