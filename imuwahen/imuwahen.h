@@ -18,11 +18,11 @@ class ilog
 		ilog(unsigned int length_of_array, flg flag);
 		ilog(unsigned int length_of_array);
 
-		void input(float value);
-		void input(std::string value);
+		void push(float value);
+		void push(std::string value);
 
-		void input(float value, unsigned int index);
-		void input(std::string value, unsigned int index);
+		void push(float value, unsigned int index);
+		void push(std::string value, unsigned int index);
 
 		float num_out(unsigned int index);
 		std::string wrd_out(unsigned int index);

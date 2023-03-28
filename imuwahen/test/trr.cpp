@@ -2,16 +2,21 @@
 #include <iostream>
 
 using namespace std;
-int uu = 20;
+int uu = 3;
 int main()
 {
 	int size = 5;
 	ilog fash = ilog(size);
-	fash.input(2.5);
-	fash.input(1.42);
-	fash.input(5.52);
-	fash.input(9.01);
-	fash.input(10);
+	fash.push(2.5);
+	fash.push(1.42);
+	fash.push(5.52);
+	fash.push(9.01);
+	fash.push(10);
+
+	for (int i = 0; i < size; i++)
+		cout << i << " " << fash.num_out(i) << " ";
+
+	cout << endl;
 
 	fash.resize(uu, BTM);
 

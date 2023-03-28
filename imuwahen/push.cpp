@@ -1,14 +1,14 @@
 #include "imuwahen.h"
 
 /**
- * ilog::input - shift all the values in the current object to the  
+ * ilog::push - shift all the values in the current object to the  
  * higher index, then insert a value into the first index.
  * @value: The value; floating point number.
  *
  * Return: void.
  */
 
-void ilog::input(float value)
+void ilog::push(float value)
 {
 	if (_flag != NUM)
 		return;
@@ -26,14 +26,14 @@ void ilog::input(float value)
 }
 
 /**
- * ilog::input - shift all the values in the current object to the  
+ * ilog::push - shift all the values in the current object to the  
  * higher index, then insert a value into the first index.
  * @value: The value; string.
  *
  * Return: void.
  */
 
-void ilog::input(std::string value)
+void ilog::push(std::string value)
 {
 	if (_flag != WRD)
 		return;
@@ -53,14 +53,14 @@ void ilog::input(std::string value)
 }
 
 /**
- * ilog::input - insert a value number into the current object.
+ * ilog::push - insert a value number into the current object.
  * @value: The value; floating point number.
  * @index: The index to place the value
  *
  * Return: void.
  */
 
-void ilog::input(float value, unsigned int index)
+void ilog::push(float value, unsigned int index)
 {
 	if(_flag != NUM || (index < 0 || index > _length_of_array))
 		return;
@@ -69,14 +69,14 @@ void ilog::input(float value, unsigned int index)
 }
 
 /**
- * ilog::input - insert a value number into the current object.
+ * ilog::push - insert a value number into the current object.
  * @value: The value. string.
  * @index: The index to place the value
  *
  * Return: void.
  */
 
-void ilog::input(std::string value, unsigned int index)
+void ilog::push(std::string value, unsigned int index)
 {
 	if(_flag != WRD || (index < 0 || index > _length_of_array))
 		return;

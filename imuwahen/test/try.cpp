@@ -2,18 +2,22 @@
 #include <iostream>
 
 using namespace std;
-int uu = 8;
+int uu = 3;
 int main()
 {
 	int size = 5;
 	ilog fash = ilog(size, WRD);
-	fash.input("Osas1");
-	fash.input("Osas2");
-	fash.input("Osas3");
-	fash.input("Osas4");
-	fash.input("Osas5");
+	fash.push("Osas1");
+	fash.push("Osas2");
+	fash.push("Osas3");
+	fash.push("Osas4");
+	fash.push("Osas5");
 
-	fash.resize(uu, TOP);
+	for (int i = 0; i < size; i++)
+	cout << i << " " << fash.wrd_out(i) << endl;
+
+	cout << endl;
+	fash.resize(uu, BTM);
 
 
 	for (int i = 0; i < uu; i++)

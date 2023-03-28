@@ -25,10 +25,7 @@ void ilog::resize(unsigned int new_length, pos point)
 		float num[new_length];
 
 		for (unsigned int i = n1; i < n2; i++)
-		{
-			num[k] = _arr[i];
-			k++;
-		}
+			num[k++] = _arr[i];
 		delete _arr;
 		_length_of_array = new_length;
 		_arr = new float[_length_of_array];	
@@ -40,10 +37,7 @@ void ilog::resize(unsigned int new_length, pos point)
 		std::string wrd[new_length];
 
 		for (unsigned int i = n1; i < n2; i++)
-		{
-			wrd[k] = s_arr[i];
-			++k;
-		}
+			wrd[k++] = s_arr[i];
 		delete[] s_arr;
 		_length_of_array = new_length;
 		s_arr = new std::string[_length_of_array];
