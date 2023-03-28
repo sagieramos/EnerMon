@@ -16,10 +16,7 @@ void ilog::push(float value)
 	float shift[_length_of_array];
 
 	for (unsigned int i = 1; i < _length_of_array; i++)
-	{
-		shift[i] = _arr[k];
-		k++;
-	}
+		shift[i] = _arr[k++];
 	shift[0] = value;
 	for (unsigned int i = 0; i < _length_of_array; i++)
 		_arr[i] = shift[i];

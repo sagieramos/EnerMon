@@ -1,6 +1,8 @@
 #include "imuwahen.h"
 #include <sstream>
 
+#define NOT_ENOUGH_MEM 8
+
 /**
  * ilog::ilog - initialize an object of the class ilog.
  * @length_of_array: The size of the object.
@@ -14,6 +16,8 @@
 ilog::ilog(unsigned int length_of_array, flg flag)
 	: _length_of_array(length_of_array), _flag(flag)
 {
+	if (length_of_array > ILOG_MAX)
+		exit(NOT_ENOUGH_MEM);
 	if (_flag == NUM)
 		_arr = new float[_length_of_array];
 	if (_flag == WRD)
@@ -30,8 +34,21 @@ ilog::ilog(unsigned int length_of_array, flg flag)
 ilog::ilog(unsigned int length_of_array)
 	: _length_of_array(length_of_array)
 {
+	if (length_of_array > ILOG_MAX)
+		exit(NOT_ENOUGH_MEM);
 	_flag = NUM;
 	_arr = new float[_length_of_array];
+}
+
+/**
+ * ilog::max_length - return maximum length of a value of an object.
+ *
+ * Return: ILOG_MAX macro defined
+ */
+
+unsigned int ilog::max_length(void)
+{
+	return ILOG_MAX;
 }
 
 /**

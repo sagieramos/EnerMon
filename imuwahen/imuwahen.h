@@ -3,6 +3,8 @@
 #ifndef IMUWAHEN_H
 #define IMUWAHEN_H
 
+#define ILOG_MAX 1024
+
 enum flg {NUM, WRD};
 enum pos {TOP, BTM};
 
@@ -18,6 +20,8 @@ class ilog
 		ilog(unsigned int length_of_array, flg flag);
 		ilog(unsigned int length_of_array);
 
+		static unsigned int max_length();	
+
 		void push(float value);
 		void push(std::string value);
 
@@ -29,7 +33,6 @@ class ilog
 
 		void resize(unsigned int size, pos point); 
 		void resize(unsigned int size); 
-	
 		std::string to_json(std::string property_name);
 		std::string to_json(void);
 		~ilog();
@@ -41,6 +44,4 @@ class ilog
 		std::string *s_arr = NULL; //pointer to array source of string data 
 };
 
-bool isStringArray(const std::string &json_str);
-void to_array(std::string json, float *array, int _length_of_array);
 #endif //IMUWAHEN_H

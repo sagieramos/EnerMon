@@ -12,7 +12,7 @@
 
 void ilog::resize(unsigned int new_length, pos point)
 {
-	if (new_length < 1)
+	if (new_length < 1 || new_length > ILOG_MAX)
 		return;
 
 	unsigned int k = 0;
@@ -56,7 +56,7 @@ void ilog::resize(unsigned int new_length, pos point)
 
 void ilog::resize(unsigned int new_length)
 {
-	if (new_length < 1)
+	if (new_length < 1 || new_length > ILOG_MAX)
 		return;
 
 	unsigned int n = _length_of_array > new_length ? new_length : _length_of_array;
