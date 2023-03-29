@@ -20,8 +20,9 @@ ilog::ilog(unsigned int length_of_array, flg flag)
 		exit(NOT_ENOUGH_MEM);
 	if (_flag == NUM)
 		_arr = new float[_length_of_array];
-	if (_flag == WRD)
+	else if (_flag == WRD)
 		s_arr = new std::string[_length_of_array];
+	else{}
 }
 
 /**
@@ -52,7 +53,7 @@ unsigned int ilog::max_length(void)
 }
 
 /**
- * ilog::~ilog - A destructor. erased object value from the heap.
+ * ilog::~ilog - A destructor. erased object from the heap.
  *
  * Return: void.
  */
