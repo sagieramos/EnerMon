@@ -1,0 +1,23 @@
+{
+  "name": "enermon",
+  "version": "1.0.0",
+  "description": "comm. between device(s) and clients via EnerMon web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagieramos/EnerMon.git"
+  },
+  "author": "Stanley Osagie Ramos, Segun Fashina Kazeem, Chinedu Mokamgba.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagieramos/EnerMon/issues"
+  },
+  "homepage": "https://github.com/sagieramos/EnerMon#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.13",
+    "protobufjs": "^7.2.3"
+  }
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package main;
+
+service Async {
+	rpc McuUpdates (stream GenericRequest) returns (stream SettingsResponse) {};
+	rpc interface (SensorRequest) returns (stream SensorResponse) {};
+}
+
+message Mcu {
+	string key = 1;
+	repeated float sensor = 2;
+} 
+
+message settings {
+	string key = 1;
+	float value = 2;
+	uint32 index = 3;
+}
+
+//MCU OR MCP sides
+message GenericRequest {
+	Mcu config = 1;
+}
+
+message SettingsResponse {
+	repeated settings config = 1;
+	bool ok_reset = 2;
+}
+
+//Device or Desktop side
+
+message SensorRequest {
+	repeated settings config = 1;
+	bool ok_reset = 2;
+}
+
+message SensorResponse {
+	Mcu sensor_value = 1;
+}
