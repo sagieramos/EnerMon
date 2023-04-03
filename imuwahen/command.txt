@@ -1,0 +1,1 @@
+protoc -I=../protos init.proto --cpp_out=./protos/

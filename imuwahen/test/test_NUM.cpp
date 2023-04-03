@@ -15,8 +15,8 @@ int main()
 
 	fash.push(20.6, 4);
 
-	cout << "Printing all the initial elements in the object\n";
-	cout << "\tINDEX	 VALUE\n";
+	cout << "\nPrinting all the initial elements in the object\n";
+	cout << "\n\tINDEX	VALUE\n";
 	for (int i = 0; i < size; i++)
 		cout << "\t" << i << ":\t" << fash.num_out(i) << "\n";
 
@@ -29,18 +29,18 @@ removes elements from the end of the array to fit the new size.
 	
 	cout << R"(
 Now that we have set point to BTM, it remove elements from the 
-beginning of the array to fit the size
+beginning of the array to fit the size. The result:
 )";
-	cout << "\tINDEX	 VALUE\n";
+	cout << "\n\tINDEX	VALUE\n";
 	for (int i = 0; i < n; i++)
 		cout << "\t" << i << ":\t" << fash.num_out(i) << "\n";
 	cout << endl;
 	
-	cout << "the ilog::to_json() is used to convert current object to JSON string\n";
-	cout << "\t" << fash.to_json() << "\n\n";
+	cout << "the ilog::to_json() is used to convert current object to JSON string.\n";
+	cout << "\n\t" << fash.to_json() << "\n\n";
 
-	cout << "It includes the propety name if it's provided. let name it \"example\"\n";
-	cout << "\t" << fash.to_json("example") << "\n";
+	cout << "It includes the propety name if it's provided. let name it \"example\".\n";
+	cout << "\n\t" << fash.to_json("example") << "\n\n";
 	
 	return 0;
 }

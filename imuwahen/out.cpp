@@ -8,7 +8,7 @@
 
 float ilog::num_out(unsigned int index)
 {
-	if (index < 0 || index > _length_of_array || _flag != NUM)
+	if (index > _length_of_array || _flag != NUM)
 		return '\0';
 	return (_arr[index]);
 }
@@ -21,7 +21,7 @@ float ilog::num_out(unsigned int index)
 
 std::string ilog::wrd_out(unsigned int index)
 {
-	if (index < 0 || index > _length_of_array || _flag != WRD)
+	if (index > _length_of_array || _flag != WRD)
 		return "";
 	return (s_arr[index]);
 }

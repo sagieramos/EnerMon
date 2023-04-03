@@ -59,7 +59,7 @@ void ilog::push(std::string value)
 
 void ilog::push(float value, unsigned int index)
 {
-	if(_flag != NUM || (index < 0 || index > _length_of_array))
+	if(_flag != NUM || (index > _length_of_array))
 		return;
 	else
 		_arr[index] = value;
@@ -75,7 +75,7 @@ void ilog::push(float value, unsigned int index)
 
 void ilog::push(std::string value, unsigned int index)
 {
-	if(_flag != WRD || (index < 0 || index > _length_of_array))
+	if(_flag != WRD || (index > _length_of_array))
 		return;
 	s_arr[index] = value;
 }

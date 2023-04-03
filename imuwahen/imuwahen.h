@@ -1,4 +1,5 @@
 #include <string>
+#include "protos/init.pb.h"
 
 #ifndef IMUWAHEN_H
 #define IMUWAHEN_H
