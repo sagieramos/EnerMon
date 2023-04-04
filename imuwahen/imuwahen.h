@@ -1,5 +1,5 @@
 #include <string>
-#include "protos/init.pb.h"
+#include "protos/enermon.pb.h"
 
 #ifndef IMUWAHEN_H
 #define IMUWAHEN_H
@@ -44,5 +44,8 @@ class ilog
 		float *_arr = NULL; //pointer to array source of float data type
 		std::string *s_arr = NULL; //pointer to array source of string data 
 };
+
+void writeIotDataToEEPROM(const enermon::iotData& obj);
+enermon::iotData readIotDataFromEEPROM();
 
 #endif //IMUWAHEN_H
