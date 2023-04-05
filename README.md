@@ -46,6 +46,11 @@ Branching and merging among team's and future contributors repositories will fol
 
 For testing EnerMon, we will use a combination of manual and automated testing. Manual testing will involve testing the user interface and user experience of EnerMon to ensure that it is user-friendly and intuitive. Automated testing will involve using tools such as Jest and Enzyme to test the functionality and performance of the system, as well as conducting integration and end-to-end testing to ensure that all components are working together as intended.
 
+## Authors ##
+Stanley Osagie
+Segun Fashina
+Chinedum Oliver-Ugwi: https://www.linkedin.com/in/chinedum-oliver-ugwi-0b8314248
+
 ## Conclusion ##
 
 EnerMon is a user-friendly, economical, and adjustable energy monitoring and control system that assists homes and small businesses in controlling their energy usage more productively. It is built on the most recent Internet of Things technologies and provides instantaneous information about energy usage as well as prudent advice on how to decrease energy waste. By furnishing a complete energy monitoring and control system, EnerMon grants customers the power to take command of their energy consumption and contribute to a more sustainable future.
