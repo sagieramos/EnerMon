@@ -1,4 +1,4 @@
-# **EnerMon:** #
+# **EnerMon:** IoT platform #
 
 ## Introduction ##
 
