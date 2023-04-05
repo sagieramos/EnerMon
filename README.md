@@ -48,7 +48,9 @@ For testing EnerMon, we will use a combination of manual and automated testing. 
 
 ## Authors ##
 Stanley Osagie: 
+
 Segun Fashina: 
+
 Chinedum Oliver-Ugwi: https://www.linkedin.com/in/chinedum-oliver-ugwi-0b8314248
 
 ## Conclusion ##
