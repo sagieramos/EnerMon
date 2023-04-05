@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EnerMon</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="logo.png" class="img-fluid" id="logo1">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1 id="menu">Our services</h1>
+                </div>
+                <div class="alert alert-info" role="alert">
+                    Our services is avaviable 24/7
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h2>ilogs<span class="badge bg-secondary">New</span></h2>
+                <p>power usage.</p>
+                <h2>power consumption</h2>
+                <p>power allocated.</p>
+            </div>
+            <h2>LOGIN</h2>
+  <form method="get" action="/bin/login">
+    Username: <input type="text" name="user" size="25" /><br />
+    Password: <input type="password" name="pw" size="10" /><br /><br />
+    <input type="hidden" name="action" value="login" />
+    <input type="submit" value="SEND" />
+  </form>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary">Order Online</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-text">
+        <p id="copyright">
+            Copyright Enermon
+        </p>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
