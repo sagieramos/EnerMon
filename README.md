@@ -8,10 +8,7 @@ The platform will serve as an interface between IoT devices and desktop or
 mobile clients. It uses gRPC for device registration and communication and 
 a microservices-based architecture for scalability and flexibility. It will 
 include features such as device control, data collection, and real-time 
-monitoring of devices and systems. The ultimate objective of this project is 
-to make it possible for anyone to create and manage their own IoT systems 
-and devices without the need for extensive technical knowledge or 
-resources.
+monitoring of devices and systems. 
 
 ## Technologies ##
 **Libraries:**
@@ -94,4 +91,6 @@ Chinedum Oliver-Ugwi: https://www.linkedin.com/in/chinedum-oliver-ugwi-0b8314248
 
 ## Conclusion ##
 
-EnerMon is a user-friendly, economical, and adjustable energy monitoring and control system that assists homes and small businesses in controlling their energy usage more productively. It is built on the most recent Internet of Things technologies and provides instantaneous information about energy usage as well as prudent advice on how to decrease energy waste. By furnishing a complete energy monitoring and control system, EnerMon grants customers the power to take command of their energy consumption and contribute to a more sustainable future.
+EnerMon is designed to make it possible for anyone to create and manage their own IoT systems 
+and devices without the need for extensive technical knowledge or resources.
+It can be used to develop a user-friendly, economical, and adjustable energy monitoring and control system that assists homes and small businesses in controlling their energy usage more productively. It is built on the most recent Internet of Things technologies and provides instantaneous information about energy usage as well as prudent advice on how to decrease energy waste. By furnishing a complete energy monitoring and control system, EnerMon grants customers the power to take command of their energy consumption and contribute to a more sustainable future.
