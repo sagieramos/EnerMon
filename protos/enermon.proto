@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package enermon;
+
+service Async {
+	rpc iotEnd (stream iotData) returns (stream mobileData) {};
+	rpc mobileEnd (mobileData) returns (stream iotData) {};
+}
+
+// Object use to store access users
+message users {
+	repeated string name = 1;
+}
+
+enum toggle {
+	HIDDEN = 0;
+	INACTIVE = 1;
+	OFF = 10;
+	ON = 11;
+}
+
+message iotData {
+	string key = 1;
+	string macAddress = 2;
+	repeated float value = 3;
+	repeated toggle swtch = 4;
+} 
+
+message mobileData {
+	string key = 1;
+	string user = 2;
+	float value = 3;
+	uint32 index = 4;
+	repeated toggle swtch = 5;
+}
