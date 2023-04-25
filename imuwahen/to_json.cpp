@@ -17,22 +17,22 @@ std::string ilog::to_json(std::string property_name)
 	
 	ss << "[";
 
-	if(_flag == WRD)
+	if(flag == WRD)
 	{
-		for (unsigned int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < length_of_array; i++)
 		{
-			ss << R"(")" << s_arr[i] << R"(")";
-			if (i != _length_of_array - 1)
+			ss << R"(")" << s_array[i] << R"(")";
+			if (i != length_of_array - 1)
 				ss << ",";
 		}
 	}
 	else
 	{
-		for (unsigned int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < length_of_array; i++)
 		{
-			ss << _arr[i];
+			ss << array[i];
 
-			if (i != _length_of_array - 1)
+			if (i != length_of_array - 1)
 				ss << ",";
 		}
 	}
@@ -52,22 +52,22 @@ std::string ilog::to_json(void)
 
 	ss << "[";
 
-	if(_flag == WRD)
+	if(flag == WRD)
 	{
-		for (unsigned int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < length_of_array; i++)
 		{
-			ss << R"(")" << s_arr[i] << R"(")";
-			if (i != _length_of_array - 1)
+			ss << R"(")" << s_array[i] << R"(")";
+			if (i != length_of_array - 1)
 				ss << ",";
 		}
 	}
 	else
 	{
-		for (unsigned int i = 0; i < _length_of_array; i++)
+		for (unsigned int i = 0; i < length_of_array; i++)
 		{
-			ss << _arr[i];
+			ss << array[i];
 
-			if (i != _length_of_array - 1)
+			if (i != length_of_array - 1)
 				ss << ",";
 		}
 	}

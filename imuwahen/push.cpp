@@ -10,16 +10,16 @@
 
 void ilog::push(float value)
 {
-	if (_flag != NUM)
+	if (flag != NUM)
 		return;
 	int k = 0;
-	float shift[_length_of_array];
+	float shift[length_of_array];
 
-	for (unsigned int i = 1; i < _length_of_array; i++)
-		shift[i] = _arr[k++];
+	for (unsigned int i = 1; i < length_of_array; i++)
+		shift[i] = array[k++];
 	shift[0] = value;
-	for (unsigned int i = 0; i < _length_of_array; i++)
-		_arr[i] = shift[i];
+	for (unsigned int i = 0; i < length_of_array; i++)
+		array[i] = shift[i];
 }
 
 /**
@@ -32,21 +32,21 @@ void ilog::push(float value)
 
 void ilog::push(std::string value)
 {
-	if (_flag != WRD)
+	if (flag != WRD)
 		return;
 	int k = 0;
-	std::string shift[_length_of_array];
+	std::string shift[length_of_array];
 
-	for (unsigned int i = 1; i < _length_of_array; i++)
+	for (unsigned int i = 1; i < length_of_array; i++)
 	{
-		shift[i] = s_arr[k];
-		s_arr[k].clear();
-		s_arr[k].resize(0);
+		shift[i] = s_array[k];
+		s_array[k].clear();
+		s_array[k].resize(0);
 		k++;
 	}
 	shift[0] = value;
-	for (unsigned int i = 0; i < _length_of_array; i++)
-		s_arr[i] = shift[i];
+	for (unsigned int i = 0; i < length_of_array; i++)
+		s_array[i] = shift[i];
 }
 
 /**
@@ -59,10 +59,10 @@ void ilog::push(std::string value)
 
 void ilog::push(float value, unsigned int index)
 {
-	if(_flag != NUM || (index > _length_of_array))
+	if(flag != NUM || (index > length_of_array))
 		return;
 	else
-		_arr[index] = value;
+		array[index] = value;
 }
 
 /**
@@ -75,7 +75,7 @@ void ilog::push(float value, unsigned int index)
 
 void ilog::push(std::string value, unsigned int index)
 {
-	if(_flag != WRD || (index > _length_of_array))
+	if(flag != WRD || (index > length_of_array))
 		return;
-	s_arr[index] = value;
+	s_array[index] = value;
 }

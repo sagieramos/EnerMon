@@ -14,14 +14,14 @@
  */
 
 ilog::ilog(unsigned int length_of_array, flg flag)
-	: _length_of_array(length_of_array), _flag(flag)
+	: length_of_array(length_of_array), flag(flag)
 {
 	if (length_of_array > ILOG_MAX)
 		exit(NOT_ENOUGH_MEM);
-	if (_flag == NUM)
-		_arr = new float[_length_of_array];
-	else if (_flag == WRD)
-		s_arr = new std::string[_length_of_array];
+	if (flag == NUM)
+		array = new float[length_of_array];
+	else if (flag == WRD)
+		s_array = new std::string[length_of_array];
 	else{}
 }
 
@@ -33,12 +33,12 @@ ilog::ilog(unsigned int length_of_array, flg flag)
  */
 
 ilog::ilog(unsigned int length_of_array)
-	: _length_of_array(length_of_array)
+	: length_of_array(length_of_array)
 {
 	if (length_of_array > ILOG_MAX)
 		exit(NOT_ENOUGH_MEM);
-	_flag = NUM;
-	_arr = new float[_length_of_array];
+	flag = NUM;
+	array = new float[length_of_array];
 }
 
 /**
@@ -60,10 +60,10 @@ unsigned int ilog::max_length(void)
 
 ilog::~ilog() 
 {
-	if (_flag == NUM)
-		delete _arr;
-	else if(_flag == WRD)
-		delete[] s_arr;
+	if (flag == NUM)
+		delete array;
+	else if(flag == WRD)
+		delete[] s_array;
 	else {}
 
 }

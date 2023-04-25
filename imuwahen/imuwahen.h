@@ -39,10 +39,10 @@ class ilog
 		~ilog();
 
 	private:
-		unsigned int _length_of_array; //length of array source
-		flg _flag;
-		float *_arr = NULL; //pointer to array source of float data type
-		std::string *s_arr = NULL; //pointer to array source of string data 
+		unsigned int length_of_array; //length of array source
+		flg flag;
+		float *array = NULL; //pointer to array source of float data type
+		std::string *s_array = NULL; //pointer to array source of string data 
 };
 
 void writeIotDataToEEPROM(const enermon::iotData& obj);
